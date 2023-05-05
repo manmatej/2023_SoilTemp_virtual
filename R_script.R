@@ -1,13 +1,3 @@
-
-
-# =================== working directory ======================================
-## set working directory to unzip source files
-
-setwd("C:/pathto/directory") # !!!! EDIT HERE !!!!
-# path<-paste0(Sys.getenv("userprofile"),"\\downloads\\")
-# setwd(paste0(path,"2022_MEB_myClim_workshop-main"))
-
-
 # =================== Install packages ======================================
 # check dependencies and install if necessary
 requiered_packages <- c("stringr", "lubridate", "tibble", "dplyr", "purrr",
@@ -47,11 +37,11 @@ mc_plot_raster(tms,sensors = c("TMS_T3"))
 
 ## aggregation in time ==================================================
 # aggregate to daily mean, range, coverage, and 95 percentile. 
-tms.day <- mc_agg(tms, fun=c("mean","range","coverage","percentile"),
-                percentiles = 95, period = "day",min_coverage = 0.8)
+tms.week <- mc_agg(tms, fun=c("mean","range","coverage","percentile"),
+                percentiles = 95, period = "week",min_coverage = 0.8)
 
-mc_plot_raster(tms.day,sensors = c("TMS_T3_mean"))
-mc_plot_raster(tms.day,sensors = c("TMS_T3_range"))
+mc_plot_raster(tms.week,sensors = c("TMS_T3_mean"))
+mc_plot_raster(tms.week,sensors = c("TMS_T3_range"))
 
 # aggregate all time-series, return one value per sensor.
 tms.all <- mc_agg(tms, fun=c("mean","range","coverage","percentile"),
