@@ -51,12 +51,7 @@ tms.week <- mc_agg(tms, fun=c("mean","range","coverage","percentile"),
                 percentiles = 95, period = "week",min_coverage = 0.8)
 
 mc_plot_raster(tms.week,sensors = c("TMS_T3_mean"))
-mc_plot_raster(tms.week,sensors = c("TMS_T3_range"))
 
-# aggregate all time-series, return one value per sensor.
-tms.all <- mc_agg(tms, fun=c("mean","range","coverage","percentile"),
-                percentiles = 95, period = "all",min_coverage = 0.8)
-r<-mc_reshape_long(tms.all)
 
-## AUTOPILOT: calculate standard myClim envi ============================= 
+## Standard myClim variables ============================= 
 temp_env <- mc_env_temp(tms,period="all",min_coverage = 0.8)
