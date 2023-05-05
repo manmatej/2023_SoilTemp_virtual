@@ -1,7 +1,14 @@
 # 2023_SoilTemp_virtual
-Introducing myClim an R package for microclimatic data handling. 
+Introducing myClim an R package for microclimatic data handling.  
+Developed by Matěj Man, Vojtěch Kalčík, Martin Macek, Jan Wild, Martin Kopecký, Josef Brůna, Lucia Hederová.   
+*Department of Geoecology, Institute of Botany of the Czech Academy of Sciences*
 
-## Install 
+* https://github.com/ibot-geoecology/myClim
+* http://labgis.ibot.cas.cz/myclim/index.html
+* http://labgis.ibot.cas.cz
+
+
+## Install myClim
 ```
 requiered_packages <- c("stringr", "lubridate", "tibble", "dplyr", "purrr",
                         "ggplot2", "ggforce", "viridis", "runner",

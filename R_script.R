@@ -1,4 +1,14 @@
-# =================== Install packages ======================================
+# Introducing myClim an R package for microclimatic data handling.  
+# Developed by Matěj Man, Vojtěch Kalčík, Martin Macek, Jan Wild, Martin Kopecký, Josef Brůna, Lucia Hederová.   
+# Department of Geoecology, Institute of Botany of the Czech Academy of Sciences
+#   
+# * https://github.com/ibot-geoecology/myClim
+# * http://labgis.ibot.cas.cz/myclim/index.html
+# * http://labgis.ibot.cas.cz
+
+
+
+# =================== Install myClim ======================================
 # check dependencies and install if necessary
 requiered_packages <- c("stringr", "lubridate", "tibble", "dplyr", "purrr",
                         "ggplot2", "ggforce", "viridis", "runner",
