@@ -28,14 +28,9 @@ install.packages("http://labgis.ibot.cas.cz/myclim/myClim_latest.tar.gz", repos=
 
 library(myClim)
 
-ft<-read.table("files_table.csv",sep=",",header = T)
-lt<-read.table("localities_table.csv",sep=",",header = T)
-
-tms <- mc_read_data(files_table = "files_table.csv",
-                      localities_table =lt,
-                      silent = T,clean = T)
-
-
+tms <- mc_read_files(paths = "./TMS_data/",
+                     dataformat_name = "TOMST",
+                     silent = T, clean = T)
 
 ## Plotting ============================================================
 
@@ -52,6 +47,11 @@ tms.week <- mc_agg(tms, fun=c("mean","range","coverage","percentile"),
 
 mc_plot_raster(tms.week,sensors = c("TMS_T3_mean"))
 
+# reshape data from myClim to flat table
+week_wide<-mc_reshape_wide(tms.week,sensors = "TMS_T3_mean")
 
 ## Standard myClim variables ============================= 
 temp_env <- mc_env_temp(tms,period="all",min_coverage = 0.8)
+levels(factor(temp_env$sensor_name))
+
+
